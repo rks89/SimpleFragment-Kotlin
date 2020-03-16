@@ -20,10 +20,11 @@ class MainActivity : AppCompatActivity() {
 
 
         val secondFragments=SecondFragments()
-
         val fragmentManager2=supportFragmentManager
         val tranFragments=fragmentManager2.beginTransaction()
         tranFragments.replace(R.id.layout,secondFragments)
         tranFragments.commit()
     }
+
+
 }
