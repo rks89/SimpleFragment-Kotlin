@@ -21,16 +21,15 @@ class AnimalAdapter(private val items : ArrayList<String>):  RecyclerView.Adapte
     override fun onBindViewHolder(holder: AnimalAdapter.ViewHolder, position: Int)
     {
        holder?.tvAnimalType?.text = items[position]
-
     }
 
     // Gets the number of animals in the list
     override fun getItemCount(): Int {
         return items.size
     }
-    //the class is hodling the list view
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+    //the class is holding the list view
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // Holds the TextView that will add each animal to
         val tvAnimalType: TextView = itemView.itemDate
 

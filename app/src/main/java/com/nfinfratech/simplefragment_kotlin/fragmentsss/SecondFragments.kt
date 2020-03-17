@@ -1,5 +1,6 @@
 package com.nfinfratech.simplefragment_kotlin.fragmentsss
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,30 +19,84 @@ class SecondFragments : Fragment()
 
     private lateinit var mListRecyclerView: RecyclerView
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        println("Fragments onAttach")
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        println("Fragments onCreate")
+
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        println("Fragments onCreateView")
+
         var view=inflater.inflate(R.layout.second_fragments,container,false)
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        println("Fragments onViewCreated")
 
         addAnimals()
 
         mListRecyclerView = view.findViewById(R.id.rv_animal_list);
         mListRecyclerView.layoutManager = LinearLayoutManager(activity)
         mListRecyclerView.itemAnimator = DefaultItemAnimator()
-
-        // Creates a vertical Layout Manager
-
-        // You can use GridLayoutManager if you want multiple columns. Enter the number of columns as a parameter.
-//        rv_animal_list.layoutManager = GridLayoutManager(this, 2)
-
-        // Access the RecyclerView Adapter and load the data into it
         mListRecyclerView.adapter = AnimalAdapter(animals)
     }
+    override fun onStart() {
+        super.onStart()
+        println("Fragments onStart")
+
+    }
+    override fun onResume() {
+        super.onResume()
+        println("Fragments onResume")
+
+    }
+    override fun onPause() {
+        super.onPause()
+        println("Fragments onPause")
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        println("Fragments onStop")
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        println("Fragments onDestroyView")
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        println("Fragments onDestroy")
+
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        println("Fragments onDetach")
+
+    }
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        println("Fragments onActivityCreated")
+
+    }
+
+
     // Adds animals to the empty animals ArrayList
     fun addAnimals()
     {
